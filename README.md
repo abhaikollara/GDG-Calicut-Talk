@@ -7,7 +7,7 @@ We'll probably cover
   - Other dunder methods
 - Decorators
 - Context Managers
-- Coroutines and Asyncio
+- Concurrency
 - Some tricks
 
 ## `__slots__`
@@ -16,6 +16,6 @@ We'll probably cover
 
 ## Context managers
 
-## Coroutines
+## Concurrency
 
 ## Metaclasses 🚨
