@@ -19,3 +19,14 @@ We'll probably cover
 ## Concurrency
 
 ## Metaclasses 🚨
+
+## Quick Tricks
+
+### The `lru_cache`
+
+### Transposing a list of lists
+
+###
+
+## Credits/References
+- [Transforming Code into Beautiful, Idiomatic Python](https://www.youtube.com/watch?v=OSGv2VnC0go)
