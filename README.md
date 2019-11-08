@@ -22,6 +22,7 @@ Lots more. Refer [Python data model docs](https://docs.python.org/3/reference/da
 
 ## `__slots__`
 - Every Python object has a `__dict__` holding it's data members.
+  - Used for dynamic allocation of attributes
 - But dicts are memory-expensive
 - `__slots__` allow you to define the data members before hand
   - But you cannot add new data members dynamically
@@ -103,6 +104,15 @@ def open_file(name):
     print("Closing file")
     f.close()
 ```
+
+## Mixins
+- Not a language feature, more of a pattern.
+
+According to this [StackOverflow answer](https://stackoverflow.com/a/547714) mixins have to uses
+
+1. You want to provide a lot of optional features for a class.
+2. You want to use one particular feature in a lot of different classes.
+
 ## Concurrency
 
 ## Metaclasses 🚨
@@ -146,13 +156,26 @@ class RetriverPuppy(metaclass=GenericPup):
 ## Quick Tricks
 
 ### The `lru_cache`
+- Store the results of recent function calls
+- Can significantly speed up if same arguments are frequently passed to function
 
-### Transposing a list of lists
+```python
+from functools import lru_cache
 
-###
+@lru_cache(8) # Remove this to see the difference
+def fib(n):
+    if n < 2:
+        return 1
+
+    return fib(n-1) + fib(n-2)
+
+print(fib(300))
+```
+
 
 ## Credits/References
 - [James Powell: So you want to be a Python expert? | PyData Seattle 2017](https://www.youtube.com/watch?v=sUmoMSU9_GQ)
 - [Transforming Code into Beautiful, Idiomatic Python](https://www.youtube.com/watch?v=OSGv2VnC0go)
 - [Python Tips](https://book.pythontips.com/)
 - [Python Metaclasses](https://realpython.com/python-metaclasses/)
+- Fluent Python book
