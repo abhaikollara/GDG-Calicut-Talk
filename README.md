@@ -2,9 +2,8 @@
 ## Beyond `print("Hello World")`
 
 We'll probably cover
-- Dunder magic
-  - `__slots__`
-  - Other dunder methods
+- `__slots__`
+- The dunder methods
 - Decorators
 - Context Managers
 - Mixins
@@ -85,9 +84,56 @@ print("Kozhikode")
 
 ## Context managers
 
+```python
+from contextlib import contextmanager
+
+@contextmanager
+def open_file(name):
+    print("Opening file")
+    f = open(name, 'w')
+    yield f
+    print("Closing file")
+    f.close()
+```
 ## Concurrency
 
 ## Metaclasses 🚨
+- Classes are objects of type `type`
+
+```python
+class Pup():
+    pass
+
+pup = Pup()
+```
+```
+>>> type(pup)
+<class '__main__.Pup'>
+>>> type(Pup)
+<class 'type'>
+```
+
+- This allows us to access classes before they are even instantiated
+
+```python
+
+class GenericPuppy(type):
+
+    def __new__(cls, name, bases, dct):
+        obj = super().__new__(cls, name, bases, dct)
+        assert hasattr(obj, "bark"), "Pup has no bark. Sad pup"
+        return obj
+
+class RetriverPuppy(metaclass=GenericPup):
+
+    def __init__(self):
+        pass
+    
+    ## Comment out this part to see the error
+    def bark():
+        print("Woof woof !")
+```
+
 
 ## Quick Tricks
 
@@ -98,5 +144,7 @@ print("Kozhikode")
 ###
 
 ## Credits/References
+- [James Powell: So you want to be a Python expert? | PyData Seattle 2017](https://www.youtube.com/watch?v=sUmoMSU9_GQ)
 - [Transforming Code into Beautiful, Idiomatic Python](https://www.youtube.com/watch?v=OSGv2VnC0go)
 - [Python Tips](https://book.pythontips.com/)
+- [Python Metaclasses](https://realpython.com/python-metaclasses/)
