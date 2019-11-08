@@ -1,5 +1,4 @@
 # Not an Introduction to Python
-## Beyond `print("Hello World")`
 
 We'll probably cover
 - `__slots__`
@@ -10,6 +9,16 @@ We'll probably cover
 - Concurrency
 - Metaclasses
 - Some tricks
+
+## The dunder methods
+- Think operator overloading if you've learned it in C (not the same thing though)
+- `len(x)` = `__len__(x)`
+- `x + y` = `x.__add__(y)` (similar for other math ops)
+- `x[4]` = `x.__contains__(4)`
+- `x == y` = `x.__eq__(y)`
+- `x in seq` = `seq.__contains__(x)`
+
+Lots more. Refer [Python data model docs](https://docs.python.org/3/reference/datamodel.html)
 
 ## `__slots__`
 - Every Python object has a `__dict__` holding it's data members.
@@ -32,7 +41,6 @@ class CardB:
         self.value = value
         self.suit = suit
 ```
-
 
 ## Decorators
 - Functions are first-class objects
