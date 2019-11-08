@@ -13,6 +13,27 @@ We'll probably cover
 - Some tricks
 
 ## `__slots__`
+- Every Python object has a `__dict__` holding it's data members.
+- But dicts are memory-expensive
+- `__slots__` allow you to define the data members before hand
+  - But you cannot add new data members dynamically
+
+```python
+class CardA:
+
+    def __init__(self, value, suit):
+        self.value = value
+        self.suit = suit
+
+
+class CardB:
+    __slots__ = ('suit', 'value')
+
+    def __init__(self, suit, value):
+        self.value = value
+        self.suit = suit
+```
+
 
 ## Decorators
 - Functions are first-class objects
@@ -78,3 +99,4 @@ print("Kozhikode")
 
 ## Credits/References
 - [Transforming Code into Beautiful, Idiomatic Python](https://www.youtube.com/watch?v=OSGv2VnC0go)
+- [Python Tips](https://book.pythontips.com/)
