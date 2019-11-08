@@ -87,8 +87,11 @@ The syntactic sugar that makes it all sweet
 @log
 def hello(name):
     print("Hello", name)
-
-print("Kozhikode")
+```
+```
+>>> hello("Kozhikode")
+Executing hello
+Hello Kozhikode
 ```
 
 ## Context managers
