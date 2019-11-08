@@ -1,8 +1,8 @@
 # Not an Introduction to Python
 
 We'll probably cover
-- `__slots__`
 - The dunder methods
+- `__slots__`
 - Decorators
 - Context Managers
 - Mixins
@@ -153,7 +153,7 @@ class RetriverPuppy(metaclass=GenericPup):
 ```
 
 
-## Quick Tricks
+## Quick Bites
 
 ### The `lru_cache`
 - Store the results of recent function calls
@@ -170,6 +170,27 @@ def fib(n):
     return fib(n-1) + fib(n-2)
 
 print(fib(300))
+```
+
+### NamedTuples
+Use `namedtuple` to make tuples self descriptive
+
+```python
+from collections import namedtuple
+
+text = "Welcome to Kozhikode. Nice to meet you all."
+
+def text_stats(text):
+  Result = namedtuple("Result", "n_chars n_words n_whitespaces")
+  n_chars = len(text)
+  n_words = len(text.split())
+  n_whitespaces = text.count(" ")
+  
+  return Result(n_chars, n_words, n_whitespaces)
+```
+```
+>>> print(text_stats(text))
+Result(n_chars=43, n_words=8, n_whitespaces=7)
 ```
 
 
