@@ -14,7 +14,7 @@ We'll probably cover
 - Think operator overloading if you've learned it in C (not the same thing though)
 - `len(x)` = `__len__(x)`
 - `x + y` = `x.__add__(y)` (similar for other math ops)
-- `x[4]` = `x.__contains__(4)`
+- `x[4]` = `x.__getitem__(4)`
 - `x == y` = `x.__eq__(y)`
 - `x in seq` = `seq.__contains__(x)`
 
