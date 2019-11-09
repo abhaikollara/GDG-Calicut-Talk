@@ -1,5 +1,16 @@
 # Not an Introduction to Python
 
+## whomai
+
+```json
+{
+  "name": "Abhai Kollara Dilip",
+  "company": "Saama Technologies",
+  "profession": "Research Engineer",
+  "stuff_I_brag_about": "Contributed to Keras long ago"
+}
+```
+
 We'll probably cover
 - The dunder methods
 - `__slots__`
