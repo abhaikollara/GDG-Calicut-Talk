@@ -11,7 +11,8 @@
 }
 ```
 
-We'll probably cover
+## We'll probably discuss
+
 - The dunder methods
 - `__slots__`
 - Enum
@@ -30,6 +31,19 @@ We'll probably cover
 - `x in seq` = `seq.__contains__(x)`
 
 Lots more. Refer [Python data model docs](https://docs.python.org/3/reference/datamodel.html)
+
+## Enum
+- Use it when you want to restrict choices to a limited set of values
+
+```python
+from enum import Enum
+
+class CardSuit:
+  Hearts = 1
+  Spades = 2
+  Clubs = 3
+  Diamonds = 4
+```
 
 ## `__slots__`
 - Every Python object has a `__dict__` holding it's data members.
