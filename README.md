@@ -6,7 +6,6 @@ We'll probably cover
 - Decorators
 - Context Managers
 - Mixins
-- Concurrency
 - Metaclasses
 - Some tricks
 
@@ -115,8 +114,6 @@ According to this [StackOverflow answer](https://stackoverflow.com/a/547714) mix
 
 1. You want to provide a lot of optional features for a class.
 2. You want to use one particular feature in a lot of different classes.
-
-## Concurrency
 
 ## Metaclasses 🚨
 - Classes are objects of type `type`
