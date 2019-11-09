@@ -3,6 +3,7 @@
 We'll probably cover
 - The dunder methods
 - `__slots__`
+- Enum
 - Decorators
 - Context Managers
 - Mixins
