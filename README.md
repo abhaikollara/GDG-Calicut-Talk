@@ -38,7 +38,7 @@ Lots more. Refer [Python data model docs](https://docs.python.org/3/reference/da
 ```python
 from enum import Enum
 
-class CardSuit:
+class CardSuit(Enum):
   Hearts = 1
   Spades = 2
   Clubs = 3
