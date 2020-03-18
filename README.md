@@ -95,7 +95,7 @@ print(add_3(7))
 def log(func):
     def logged(*args, **kwargs):
         print("Executing", func.__qualname__)
-        func(*args, **kwargs)
+        return func(*args, **kwargs)
 
     return logged
 ```
